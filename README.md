@@ -33,11 +33,11 @@ yarn install
 yarn run start
 ```
 ### Future Improvement
-Instead if doing the POST via REST maybe I could do it with cURL
-Offload the upload process to a worker or async, to keep the electron main process "free"
-Implement Progress bar
-Implement Retry functionality if upload fails at 95%, retry and with exponential backoff
-Implement compression so no matter the source the POSTed file will be small thus decreasing time-to-view (the complete time block from the moment it gets uploaded to the API until the time you can share the link with friends)
+- [ ] **Upload via cURL** — replace REST POST with cURL for uploading
+- [ ] **Async upload worker** — offload upload to background thread/worker to keep UI responsive
+- [ ] **Upload progress bar** — real-time progress indicator during upload
+- [ ] **Retry with exponential backoff** — auto-retry on failure (e.g., fails at 95%)
+- [ ] **File compression** — compress before upload to reduce size and speed up time-to-view
 
 ### Built With
 
