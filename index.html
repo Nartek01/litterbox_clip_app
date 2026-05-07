@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- CSP är restriktiv med meningen eftersom det är ett desktop applikation -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: style-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Litterbox Clip Watcher</title>
+  </head>
+  <body>
+    <main>
+      <h1>Litterbox Clip Watcher</h1>
+      <aside class="card glass-effect" aria-label="Clip history">
+        <h2>History</h2>
+        <ul aria-label="Recent clips">
+          <li>
+            <a
+              href="https://foobar.com/clip/asd23sdsfg"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://foobar.com/clip/asd23sdsfg</a
+            >
+          </li>
+        </ul>
+      </aside>
+      <span class="card glass-effect" role="status">
+        <time datetime="PT1M20S"> Recorded: 1min 20s</time>
+      </span>
+      <button
+        class="glass-effect glass-interactive btn"
+        aria-label="Toggle folder watcher"
+        aria-pressed="false"
+        type="button"
+      >
+        Watcher: OFF
+      </button>
+    </main>
+  </body>
+</html>

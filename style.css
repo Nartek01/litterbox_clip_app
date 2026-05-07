@@ -1,0 +1,97 @@
+/* 1. Global Variables & Design Tokens */
+:root {
+    /* Colors */
+    --bg-main: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-highlight: rgba(255, 255, 255, 0.2);
+    --text-primary: #f8fafc;
+
+    /* Sizing Tokens */
+    --radius-lg: 1.25rem;
+    /* 20px */
+    --radius-md: 0.75rem;
+    /* 12px */
+    --blur-amount: 12px;
+    --padding-std: 1rem;
+    --margin-std: 1rem;
+    /* 16px */
+    --font-std: 1rem;
+}
+
+/* 2. Reset & Core Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--bg-main);
+    /* Optional: Background gradient to show off the glass effect */
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    color: var(--text-primary);
+    font-family:
+        system-ui,
+        -apple-system,
+        sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* 3. The "DRY" Glass Utility Classes */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    /* Safari support */
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-interactive {
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.glass-interactive:hover {
+    background: var(--glass-highlight);
+    border-color: var(--glass-highlight);
+}
+
+/* 4. Component Structure */
+.card {
+    padding: var(--padding-std);
+    max-width: 400px;
+    width: auto;
+    margin-top: var(--margin-std);
+}
+
+.btn {
+    display: inline-block;
+    margin: var(--margin-std);
+    font-size: var(--font-std);
+    padding: var(--padding-std);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* 4. Remove bullet styling from all list */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* 5. Remove link styling */
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
